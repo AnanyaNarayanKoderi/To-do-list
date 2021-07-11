@@ -1,1 +1,0 @@
-module.exports="mongodb+srv://ananya:ananyaananya@cluster0.1zroo.mongodb.net/todoListDB?retryWrites=true&w=majority";

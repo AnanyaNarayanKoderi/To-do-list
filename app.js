@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose=require("mongoose");
-const mongourl=require(__dirname+"/conf.js");
+
 
 
 
@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("public"));
 
 
-mongoose.connect(mongourl,{  useUnifiedTopology: true,useNewUrlParser: true  } );
+mongoose.connect("mongodb+srv://ananya:ananyaananya@cluster0.1zroo.mongodb.net/todoListDB?retryWrites=true&w=majority",{  useUnifiedTopology: true,useNewUrlParser: true  } );
 
 
 const itemSchema=new mongoose.Schema({

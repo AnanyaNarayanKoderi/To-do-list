@@ -11,8 +11,21 @@ app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(express.static("public"));
 
-
-mongoose.connect("mongodb+srv://ananya:ananyaananya@cluster0.1zroo.mongodb.net/todoListDB?retryWrites=true&w=majority",{  useUnifiedTopology: true,useNewUrlParser: true  } );
+getConnection = async () => {
+    try {
+      await mongoose.connect(
+        'mongodb+srv://ananya:ananyaananya@cluster0.1zroo.mongodb.net/todoListDB?retryWrites=true&w=majority',
+        { useUnifiedTopology: true,useNewUrlParser: true}
+      );
+      console.log('Connection to DB Successful');
+    } catch (err) {
+      console.log('Connection to DB Failed');
+    }
+  };
+  
+  getConnection();
+  
+//mongoose.connect("mongodb+srv://ananya:ananyaananya@cluster0.1zroo.mongodb.net/todoListDB?retryWrites=true&w=majority",{  useUnifiedTopology: true,useNewUrlParser: true  } );
 
 
 const itemSchema=new mongoose.Schema({
